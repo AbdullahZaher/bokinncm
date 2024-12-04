@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215, 28%, 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215, 28%, 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215, 28%, 17%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 70% 50%;
+    --radius: 0.75rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --home-bg: 47, 91%, 61%;
+  }
+
+  .dark {
+    --background: 215, 28%, 17%;
+    --foreground: 210 40% 98%;
+    --card: 215, 28%, 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215, 28%, 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --home-bg: 47, 91%, 61%;
+  }
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+.PhoneInput {
+  @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2;
+}
+
+.PhoneInputCountry {
+  @apply mr-2 flex items-center gap-2;
+}
+
+.PhoneInputCountrySelect {
+  @apply h-full bg-transparent outline-none;
+}
+
+.PhoneInputCountrySelectArrow {
+  @apply text-muted-foreground;
+}
+
+.PhoneInputInput {
+  @apply h-full w-full bg-transparent outline-none placeholder:text-muted-foreground;
+}
+
+.PhoneInputCountryIcon {
+  @apply h-4 w-6;
+}
+
+.dark .PhoneInput {
+  @apply border-input bg-background text-foreground;
+}
+
+.dark .PhoneInputCountrySelectArrow {
+  @apply text-muted-foreground;
+}
+
+.dark .PhoneInputInput {
+  @apply text-foreground placeholder:text-muted-foreground;
+}
+
+/* Phone Input Dropdown Styles */
+.PhoneInputCountrySelect option {
+  @apply bg-background text-foreground;
+}
+
+/* Country List Dropdown */
+.PhoneInputCountrySelectDropdown {
+  @apply bg-background border border-input rounded-md shadow-md;
+}
+
+.PhoneInputCountrySelectOption {
+  @apply px-3 py-2 hover:bg-accent hover:text-accent-foreground cursor-pointer;
+}
+
+.PhoneInputCountrySelectOption--preferred {
+  @apply bg-muted/50;
+}
+
+/* Selected Option */
+.PhoneInputCountrySelectOption[aria-selected="true"] {
+  @apply bg-primary text-primary-foreground;
+}
+
+/* Dark mode specific adjustments */
+.dark .PhoneInputCountrySelectDropdown {
+  @apply bg-background border-input;
+}
+
+.dark .PhoneInputCountrySelectOption {
+  @apply text-foreground hover:bg-accent hover:text-accent-foreground;
+}
+
+.dark .PhoneInputCountrySelectOption--preferred {
+  @apply bg-muted/20;
+}
+
+.dark .PhoneInputCountrySelectOption[aria-selected="true"] {
+  @apply bg-primary text-primary-foreground;
+}
+
+@keyframes slide-in-from-top-1 {
+  from {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.slide-in-from-top-1 {
+  transform: translateY(-0.5rem);
+}
