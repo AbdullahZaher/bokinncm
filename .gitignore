@@ -1,0 +1,10 @@
+# Remove duplicate entries and make it more comprehensive
+node_modules
+.env
+
+# Next.js
+.next
+out
+build
+*.pack
+.next/cache/
